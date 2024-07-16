@@ -336,7 +336,86 @@ ul {
         font-weight: 600;
     }
 
-    
+    .slider {
+        width: 92%;
+        position: relative;
+        top: -1.625rem;
+    }
+
+    .features-div {
+        grid-template-columns: repeat(2, 50%);
+        align-items: center;
+        justify-content: center;
+        padding: 2.25rem 0;
+        margin: 0;
+        border-top: 0;
+        position: relative;
+    }
+
+    span.discount {
+        display: inline;
+        text-transform: lowercase;
+        color: hsl(15, 100%, 70%);
+    }
+
+    .features-div hr {
+        display: block;
+        position: absolute;
+        top: .625rem;
+        border: .0625rem solid #edf0f9;
+        width: 100%;
+    }
+
+    main ul {
+        margin-inline-start: 0;
+        padding-inline-start: 2.9375rem;
+        text-align: left;
+        position: relative;
+        top: .5625rem;
+    }
+
+    .btn-div {
+        position: relative;
+        top: .25rem;
+        left: .375rem;
+    }
+
+    .btn-div button {
+        margin-top: 0;
+    }
+
+    .billing-div {
+        justify-content: center;
+        margin-left: 2.875rem;
+    }
 }
+
+/* Active State Elements Styling */
+.slider::-webkit-slider-thumb:hover {
+    background: hsl(174, 86%, 45%);
+    background-image: url("../images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider::-webkit-slider-thumb:active {
+    background: #23aeal;
+    background-image: url("../images/icon-slider.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn-div button:hover {
+    color: #fff;
+    font-weight: 800;
+}
+
+.checkbox:hover {
+    background-color: hsl(174, 77%, 80%);
+    cursor: pointer;
+}
+
+
+
 
   
