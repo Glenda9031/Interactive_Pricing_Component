@@ -14,9 +14,52 @@ const viewsArr = [
 ],
 const yearlyDiscount = 0.25;
 
-slider.addEventListener("input", (event));
+slider.addEventListener("input", (event) => calculatePrice(event));
 
+const calculatePrice = (event) => {
+    // Change background color of slider
+    console.log(slider.value);
+    if (+slider.value === 0) {
+        slider.style.backgroundSize = "0% 100%";
+    }
+    if (+slider.value === 1) {
+        slider.style.backgroundSize = "25% 100%";
+    }
+    if (+slider.value === 2) {
+        slider.style.backgroundSize = "50% 100%";
+    }
+    if (+slider.value === 3) {
+        slider.style.backgroundSize = "75% 100%";
+    }
+    if (+slider.value === 4) {
+        slider.style.backgroundSize = "100% 100%";
+    }
 
+    viewsEl.textContent = viewsArr[event.target.value];
+    if (!checkbox.checked) {
+        priceEl.textContent = "$" + monthlyPrices[event.target.value];
+    } else {
+        let amount = Math.abs(
+            monthlyPrices[event.target.value] * 12 *0.25 -
+            monthlyPrices[event.target.value] * 12 
+        );
+        priceEl.textContent = "$" + amount;
+    }
+};
+checkbox.addEventListener("change", togglePriceCalculate);
+
+function togglePriceCalculate() {
+    viewsEl.textContent = viewsArr[slider.value];
+    if (!checkbox.checked) {
+        priceEl.textContent = "$" + monthlyPrices[slider.value];
+    } else {
+        let amount = Math.abs(
+            monthlyPrices[slider.value] * 12 * 0.25 -
+            monthlyPrices[slider.value] * 12
+        );
+        priceEl.textContent = "$" + amount;
+    }
+}
 
 
 
